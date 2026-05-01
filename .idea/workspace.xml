@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Milestone 1 completed with links for the gantt chart and the IPO table">
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone1 pdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/4113 Milestone 1.md" beforeDir="false" afterPath="$PROJECT_DIR$/4113 Milestone 1.md" afterDir="false" />
     </list>
@@ -13,22 +13,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "eugnx"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eugnx&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/eugnx/T0466145_Eugene_4113.git",
-    "accountId": "29caf78c-d6a5-40ff-aea1-b65bcdf16185"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eugnx/T0466145_Eugene_4113.git&quot;,
+    &quot;accountId&quot;: &quot;29caf78c-d6a5-40ff-aea1-b65bcdf16185&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3CnfzVBU5QILC67gp1usvuPy878" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,10 +38,13 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/mahas/IdeaProjects/T0466145_Eugene_4113/src/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
@@ -70,7 +73,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777460470185</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="milestone1 pdf">
+      <option name="closed" value="true" />
+      <created>1777635419775</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777635419776</updated>
+    </task>
+    <task id="LOCAL-00004" summary="milestone1 pdf">
+      <option name="closed" value="true" />
+      <created>1777635438503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777635438503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,7 +98,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Milestone 1 completed version" />
     <MESSAGE value="Milestone 1 completed with links for the gantt chart and the IPO table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Milestone 1 completed with links for the gantt chart and the IPO table" />
+    <MESSAGE value="milestone1 pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="milestone1 pdf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

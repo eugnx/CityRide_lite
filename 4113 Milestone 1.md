@@ -125,8 +125,6 @@ link to the original Gantt chart: https://github.com/eugnx/T0466145_Eugene_4113/
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-
-
 ### Diary Entries
 
 ------------------------------------------------------------------------------------------------------------------------------
@@ -145,8 +143,6 @@ Today I focused on analysing the inputs, processes, and outputs of the system by
 One challenge I faced was ensuring that I included all major system functions in the IPO table without making it too complex. To solve this, I grouped related processes together and ensured each feature such as adding journeys or generating summaries was clearly represented.
 
 Creating the IPO tables has made the program logic much clearer and will help guide my design in the next stage.
-
-
 
 **29/04/2026 -Diary Entry 2 – Planning and Gantt Chart**,
 
