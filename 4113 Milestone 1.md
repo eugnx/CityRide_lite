@@ -21,9 +21,6 @@
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-<style>
-</style>
-
 The program is a console-based application that helps a user
 to record, manage and analyse their transport journeys for one day. The program
 applies discounts to certain passenger type, calculates the prices with a set of
