@@ -61,7 +61,7 @@ Limitations:CityRide Lite is session-only,
 console-based, lacks GPS, permanent storage, and real payments. Nevertheless,
 Uber provided a valuable real-world reference for organising journeys, pricing
 logic, and summaries (Uber Technologies Inc., 2024).
-![](Uber.jpg)
+![](Research images/Uber.jpg)
 
 **Research 2  into Existing Transport Systems (Flexibus)**
 
@@ -105,7 +105,7 @@ stores no data beyond the current session, processes no real payments, and runs
 only in a console environment. Despite these limitations, studying Uber
 provided a valuable foundation for designing FlexBus's journey logging, fare
 rules, and summary functions (Uber Technologies Inc., 2024; Sommerville, 2016).
-![](Flexibus.jpg)
+![](Research images/Flexibus.jpg)
 
 -----------------------------------------------------------------------------------------------------------------------------Name of program:
 Reference (link):
