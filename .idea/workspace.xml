@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Milestone 2">
-      <change afterPath="$PROJECT_DIR$/Docs/milestone 3.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CityRideDataset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FareCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InputValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Journey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JourneyManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PassengerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TimeBand.java" afterDir="false" />
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone 3 intial work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4113 Milestone 1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4113 Milestone 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CityRide_Gantt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CityRide_Gantt2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexibus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IPO table .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Uber.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone 2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone 2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/milestone 3.md" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/milestone 3.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +32,9 @@
     &quot;accountId&quot;: &quot;29caf78c-d6a5-40ff-aea1-b65bcdf16185&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3,
   &quot;fromUser&quot;: false
@@ -67,6 +52,7 @@
     "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -78,6 +64,11 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mahas\IdeaProjects\T0466145_Eugene_4113\Docs" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="" />
@@ -142,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778241722763</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="milestone 3 intial work">
+      <option name="closed" value="true" />
+      <created>1778462014285</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1778462014285</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +153,7 @@
     <MESSAGE value="milestone1 pdf" />
     <MESSAGE value="system flowchart designs" />
     <MESSAGE value="Milestone 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Milestone 2" />
+    <MESSAGE value="milestone 3 intial work" />
+    <option name="LAST_COMMIT_MESSAGE" value="milestone 3 intial work" />
   </component>
 </project>
