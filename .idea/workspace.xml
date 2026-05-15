@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone 3 research">
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone 3 final work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/milestone 3.md" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/milestone 3.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778531024440</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="milestone 3 final work">
+      <option name="closed" value="true" />
+      <created>1778799852673</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1778799852674</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +178,7 @@
     <MESSAGE value="Milestone 2" />
     <MESSAGE value="milestone 3 intial work" />
     <MESSAGE value="milestone 3 research" />
-    <option name="LAST_COMMIT_MESSAGE" value="milestone 3 research" />
+    <MESSAGE value="milestone 3 final work" />
+    <option name="LAST_COMMIT_MESSAGE" value="milestone 3 final work" />
   </component>
 </project>
