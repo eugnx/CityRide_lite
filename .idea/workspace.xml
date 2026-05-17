@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone 3 final work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FareCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FareCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Journey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Journey.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +35,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3,
@@ -164,7 +167,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778799852674</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="milestone 3 final work">
+      <option name="closed" value="true" />
+      <created>1778803411762</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1778803411763</updated>
+    </task>
+    <task id="LOCAL-00013" summary="milestone 3 final work">
+      <option name="closed" value="true" />
+      <created>1778803423045</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1778803423045</updated>
+    </task>
+    <task id="LOCAL-00014" summary="milestone 3 final work">
+      <option name="closed" value="true" />
+      <created>1778803471991</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1778803471991</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

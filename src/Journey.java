@@ -92,6 +92,9 @@ public class Journey {
 
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fomattdate = date.format(formatter);
+
+        double discountPercentage = discountApplied != null ? discountApplied.doubleValue() * 100 : 0 ;
         return String.format("ID: %d | Date: %s | From: %d | To: %d | Time: %s | " +
                         "Passenger: %s | Zones: %d | Base: £%.2f | Charged: £%.2f",
                 journeyId, date.format(formatter), fromZone, toZone, timeBand,
