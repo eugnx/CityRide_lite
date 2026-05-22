@@ -1,7 +1,7 @@
 # IY4113 Milestone 4
 
 | Assessment Details | Please Complete All Details                                      |
-| ------------------ | ---------------------------------------------------------------- |
+|--------------------| ---------------------------------------------------------------- |
 | Group              | A                                                                |
 | Module Title       | Applied Software Engineering using Object-Orientated Programming |
 | Assessment Type    | coursework                                                       |
@@ -9,7 +9,7 @@
 | Student ID Number  | P4661445                                                         |
 | Date of Submission | 22/05/2026                                                       |
 | Word Count         | 3820                                                             |
-| GItHub Link        |                                                                  |
+| GitHub Link        |   https://github.com/eugnx/T0466145_Eugene_4113                                                               |
 
 - [x] *I confirm that this assignment is my own work. Where I have referred to academic sources, I have provided in-text citations and included the sources in
   the final reference list.*
