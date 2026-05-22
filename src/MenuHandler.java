@@ -155,7 +155,7 @@ public class MenuHandler {
     private void filterJourneys() {
         boolean filterMenuActive = true;
 
-        while (filterMenuActive) {
+        while (filterMenuActive == true) {
             displayFilterMenu();
             int choice = getIntInput("Enter your choice: ");
 
@@ -287,7 +287,7 @@ public class MenuHandler {
             // Category counts
             displayCategoryCounts();
         }
-        System.out.println("====================================");
+
     }
 
     private void displayCategoryCounts() {
@@ -346,13 +346,13 @@ public class MenuHandler {
         if (journeyToRemove == null) {
             System.out.println("Error: Journey with ID " + id + " not found!");
         } else {
-            System.out.print("Are you sure you want to remove journey #" + id + "? (Y/N): ");
+            System.out.print("Are you sure you want to remove journey " + id + "? (Y/N): ");
             String confirm = scanner.nextLine().trim().toUpperCase();
 
             if (confirm.equals("Y")) {
                 boolean removed = journeyManager.removeJourneyById(id);
                 if (removed) {
-                    System.out.println("✓ Journey #" + id + " removed successfully!");
+                    System.out.println("Journey " + id + " removed successfully!");
                     System.out.println("All totals have been recalculated.");
                 } else {
                     System.out.println("Error: Could not remove journey.");
@@ -440,7 +440,7 @@ public class MenuHandler {
         boolean valid = false;
         CityRideDataset.PassengerType type = null;
 
-        while (!valid) {
+        while (valid == false) {
             System.out.print("Enter passenger type (ADULT/STUDENT/CHILD/SENIOR_CITIZEN): ");
             String input = scanner.nextLine().trim().toUpperCase();
 
@@ -460,7 +460,7 @@ public class MenuHandler {
         boolean valid = false;
         int value = 0;
 
-        while (valid == true) {
+        while (valid == false) {
             System.out.print(prompt);
             String input = scanner.nextLine().trim();
 
