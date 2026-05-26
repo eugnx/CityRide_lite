@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone 4 complete code">
-      <change afterPath="$PROJECT_DIR$/Docs/Milestone 4.md" afterDir="false" />
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="milestone 4 md file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +212,31 @@
       <option name="project" value="LOCAL" />
       <updated>1779413157603</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="milestone 4 md file">
+      <option name="closed" value="true" />
+      <created>1779468583922</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1779468583922</updated>
+    </task>
+    <task id="LOCAL-00019" summary="milestone 4 md file">
+      <option name="closed" value="true" />
+      <created>1779468660406</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1779468660407</updated>
+    </task>
+    <task id="LOCAL-00020" summary="milestone 4 md file">
+      <option name="closed" value="true" />
+      <created>1779469182534</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1779469182534</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +255,7 @@
     <MESSAGE value="Updated MenuHandler" />
     <MESSAGE value="Updated Menuhandler" />
     <MESSAGE value="milestone 4 complete code" />
-    <option name="LAST_COMMIT_MESSAGE" value="milestone 4 complete code" />
+    <MESSAGE value="milestone 4 md file" />
+    <option name="LAST_COMMIT_MESSAGE" value="milestone 4 md file" />
   </component>
 </project>
