@@ -251,7 +251,8 @@ public class MenuHandler {
             for (Journey journey : journeys) {
                 System.out.println(journey);
             }
-
+            //#((OpenAI, 2026)
+            //usage of the Bigdecimal notation
             // Calculate total for filtered journeys
             BigDecimal total = BigDecimal.ZERO;
             for (Journey journey : journeys) {
@@ -307,7 +308,8 @@ public class MenuHandler {
             }
         }
     }
-
+//#(OpenAI, 2024)
+    //formating the display table
     private void displayTotalsByType() {
         System.out.println("\n========== TOTALS BY PASSENGER TYPE ==========");
 
@@ -377,7 +379,8 @@ public class MenuHandler {
     }
 
 
-
+//#(GitHub Copilot, 2024)
+    // how date to implement date format
     private LocalDate getDateInput(String prompt) {
         boolean valid = false;
         String input = "";

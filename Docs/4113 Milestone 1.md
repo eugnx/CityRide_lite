@@ -89,18 +89,18 @@ the user exits the program
 - Zones must be in the stated range which is zone
 1-5
 
--  Restricted time bands- off peak and peak
+-Restricted time bands- off peak and peak
 
--  Only one user is allowed to run the program
+-Only one user is allowed to run the program
 
--  They it supports only one day/session only
+-They it supports only one day/session only
 
--  Its console based there is no user interface
+-Its console based there is no user interface
 
--  The passenger types are restricted to adult,
+-The passenger types are restricted to adult,
 student, child, senior citizen
 
--  Price calculation should meet the provided
+-Price calculation should meet the provided
 dataset
 
 ------------------------------------------------------------------------------------------------------------------------------

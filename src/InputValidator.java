@@ -4,9 +4,9 @@ import java.time.format.DateTimeParseException;
 
 
 public class InputValidator {
-
+    //#(deepseek,2026)
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("d/M/yyyy");
-
+    //#(deepseek,2026)
     public static boolean isValidZone(int zone) {
         return zone >= CityRideDataset.MIN_ZONE && zone <= CityRideDataset.MAX_ZONE;
     }
@@ -28,7 +28,7 @@ public class InputValidator {
             return null;
         }
     }
-
+    //#(deepseek,2026)
     public static boolean isValidInteger(String input) {
         if (input == null || input.trim().isEmpty()) {
             return false;
@@ -41,7 +41,7 @@ public class InputValidator {
         }
     }
 
-    public static boolean  isNotBlank(String Input){
+    public boolean  isNotBlank(String Input){
         boolean isValid;
         if(Input == null)
              isValid = false;
@@ -49,7 +49,7 @@ public class InputValidator {
     }
     // separates integers from strings
 
-    public static Integer parseInteger(String input) {
+    public  Integer parseInteger(String input) {
         try {
             return Integer.parseInt(input.trim());
         } catch (NumberFormatException e) {
