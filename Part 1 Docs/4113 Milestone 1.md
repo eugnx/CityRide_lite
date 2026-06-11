@@ -30,9 +30,9 @@ category.
 
 **Core functionality:**
 
-· Input validation
+·Input validation
 
--  makes sure that all input values are correct
+- makes sure that all input values are correct
 
 ·  Adding a journey
 
