@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 1">
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 1 complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Part 2 Docs/IY4113 Milestone 1 Part 2.md" beforeDir="false" afterPath="$PROJECT_DIR$/Part 2 Docs/IY4113 Milestone 1 Part 2.md" afterDir="false" />
     </list>
@@ -286,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781151748545</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Part 2 milestone 1 complete">
+      <option name="closed" value="true" />
+      <created>1781261313684</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1781261313685</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +317,7 @@
     <MESSAGE value="milestone 4 class diagram" />
     <MESSAGE value="update" />
     <MESSAGE value="Part 2 milestone 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 1" />
+    <MESSAGE value="Part 2 milestone 1 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 1 complete" />
   </component>
 </project>
