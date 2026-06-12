@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/Part 2 Docs/IY4113 Milestone 1 Part 2.md" afterDir="false" />
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/4113 Milestone 1.md" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/4113 Milestone 1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/4113 Milestone 1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/4113 Milestone 1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/CityRide_Gantt.png" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/CityRide_Gantt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/CityRide_Gantt2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/CityRide_Gantt2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/CityRide_Gantt3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/CityRide_Gantt3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/IPO table .png" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/IPO table .png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/IY4113 Milestones 4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/IY4113 Milestones 4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/Milestone 4.md" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/Milestone 4.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/milestone 2.md" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/milestone 2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/milestone 2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/milestone 2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/milestone 3.md" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/milestone 3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/milestone 3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 Docs/milestone 3.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part 2 Docs/IY4113 Milestone 1 Part 2.md" beforeDir="false" afterPath="$PROJECT_DIR$/Part 2 Docs/IY4113 Milestone 1 Part 2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781127894408</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Part 2 milestone 1">
+      <option name="closed" value="true" />
+      <created>1781151748545</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1781151748545</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +308,7 @@
     <MESSAGE value="milestone 4 md file" />
     <MESSAGE value="milestone 4 class diagram" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="Part 2 milestone 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 1" />
   </component>
 </project>
