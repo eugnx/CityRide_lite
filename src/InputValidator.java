@@ -7,6 +7,13 @@ public class InputValidator {
     //#(deepseek,2026)
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("d/M/yyyy");
     //#(deepseek,2026)
+
+    private InputValidator() {}
+
+    public static boolean isNotBlank(String input){
+        return input != null && !input.trim().isEmpty();
+    }
+
     public static boolean isValidZone(int zone) {
         return zone >= CityRideDataset.MIN_ZONE && zone <= CityRideDataset.MAX_ZONE;
     }
@@ -30,7 +37,7 @@ public class InputValidator {
     }
     //#(deepseek,2026)
     public static boolean isValidInteger(String input) {
-        if (input == null || input.trim().isEmpty()) {
+        if (!isNotBlank(input)) {
             return false;
         }
         try {
@@ -41,12 +48,7 @@ public class InputValidator {
         }
     }
 
-    public boolean  isNotBlank(String Input){
-        boolean isValid;
-        if(Input == null)
-             isValid = false;
-        return !Input.trim().isEmpty();
-    }
+
     // separates integers from strings
 
     public  Integer parseInteger(String input) {
@@ -56,71 +58,74 @@ public class InputValidator {
             return null;
         }
     }
+/// change
 
     public static boolean isValidTimeBand(String input) {
-        boolean isValid = false;
-
-        if (input != null) {
-            String upperInput = input.trim().toUpperCase();
-            isValid = upperInput.equals("PEAK") || upperInput.equals("OFF_PEAK");
-        }
-
-        return isValid;
+        return parseTimeBand(input) != null;
     }
 
    public static CityRideDataset.TimeBand parseTimeBand(String input) {
-        CityRideDataset.TimeBand band = null;
-
-        if (input != null) {
-            String upperInput = input.trim().toUpperCase();
-            if (upperInput.equals("PEAK")) {
-                band = CityRideDataset.TimeBand.PEAK;
-            } else if (upperInput.equals("OFF_PEAK")) {
-                band = CityRideDataset.TimeBand.OFF_PEAK;
-            }
+        if (input == null ){
+            return null;
+        }
+        String upperInput = input.trim().toUpperCase();
+        if (upperInput.equals("PEAK")){
+            return CityRideDataset.TimeBand.PEAK;
+        }
+        if (upperInput.equals("OFF_PEAK")){
+            return CityRideDataset.TimeBand.OFF_PEAK;
         }
 
-        return band;
+        return null;
+
     }
 
     public static boolean isValidPassengerType(String input) {
-        boolean isValid = false;
-
-        if (input != null) {
-            String upperInput = input.trim().toUpperCase();
-            isValid = upperInput.equals("ADULT") ||
-                    upperInput.equals("STUDENT") ||
-                    upperInput.equals("CHILD") ||
-                    upperInput.equals("SENIOR_CITIZEN");
-        }
-
-        return isValid;
+        return parsePassengerType(input) != null;
     }
 
     public static CityRideDataset.PassengerType parsePassengerType(String input) {
-        CityRideDataset.PassengerType type = null;
-
-        if (input != null) {
-            String upperInput = input.trim().toUpperCase();
-            switch (upperInput) {
-                case "ADULT":
-                    type = CityRideDataset.PassengerType.ADULT;
-                    break;
-                case "STUDENT":
-                    type = CityRideDataset.PassengerType.STUDENT;
-                    break;
-                case "CHILD":
-                    type = CityRideDataset.PassengerType.CHILD;
-                    break;
-                case "SENIOR_CITIZEN":
-                    type = CityRideDataset.PassengerType.SENIOR_CITIZEN;
-                    break;
+        if (input == null) {
+            return null;
+        }
+        String upperInput = input.trim().toUpperCase();
+        switch (upperInput) {
+            case "ADULT":
+                return CityRideDataset.PassengerType.ADULT;
+            case "STUDENT":
+                return CityRideDataset.PassengerType.STUDENT;
+            case "CHILD":
+                return CityRideDataset.PassengerType.CHILD;
+            case "SENIOR_CITIZEN":
+                return CityRideDataset.PassengerType.SENIOR_CITIZEN;
                 default:
-                    type = null;
-            }
+                    return null;
+        }
+    }
+
+    public static boolean isValidPaymentOption(String input) {
+        return parsePaymentOption(input) != null;
+    }
+
+    public static PaymentOption parsePaymentOption(String input) {
+        if (input == null) {
+            return null;
         }
 
-        return type;
+        String upperInput = input.trim().toUpperCase();
+        switch (upperInput) {
+            case "CONTACTLESS_CARD":
+                return PaymentOption.CONTACTLESS_CARD;
+            case "MOBILE_WALLET":
+                return PaymentOption.MOBILE_WALLET;
+            case "CASH":
+                return PaymentOption.CASH;
+            case "STUDENT_PASS":
+                return PaymentOption.STUDENT_PASS;
+            default:
+                return null;
+        }
     }
+
 
 }

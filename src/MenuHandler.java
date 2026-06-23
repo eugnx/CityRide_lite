@@ -8,6 +8,8 @@ import java.util.Map;
 
 public class MenuHandler {
 
+
+    private static final int MENU_PROFILE = 0;
     private static final int MENU_ADD_JOURNEY = 1;
     private static final int MENU_LIST_JOURNEYS = 2;
     private static final int MENU_FILTER_JOURNEYS = 3;
@@ -15,7 +17,14 @@ public class MenuHandler {
     private static final int MENU_TOTALS_BY_TYPE = 5;
     private static final int MENU_REMOVE_JOURNEY= 6;
     private static final int MENU_RESET_DAY = 7;
-    private static final int MENU_EXIT = 8;
+    private static final int MENU_SAVE_PROFILE = 8;
+    private static final int MENU_EXIT = 9;
+
+    private static final int PROFILE_VIEW = 1;
+    private static final int PROFILE_CREATE = 2;
+    private static final int PROFILE_LOAD = 3;
+    private static final int PROFILE_SAVE = 4;
+    private static final int PROFILE_BACK = 5;
 
     // sub-menu constants
     private static final int FILTER_BY_PASSENGER_TYPE = 1;
@@ -28,17 +37,20 @@ public class MenuHandler {
 // private fileds
     private Scanner scanner;
     private JourneyManager journeyManager;
+    private RiderProfile activeProfile;
     private boolean running;
 
 
     public MenuHandler() {
         this.scanner = new Scanner(System.in);
         this.journeyManager = new JourneyManager();
+        this.activeProfile = new RiderProfile();
         this.running = true;
     }
 
     public void start() {
         displayWelcomeMessage();
+        setupRiderProfile = null;
 
         while (running) {
             displayMainMenu();
@@ -46,6 +58,7 @@ public class MenuHandler {
             processMenuChoice(choice);
         }
 
+        offerProfileSaveBeforeExit();
         System.out.println("\nThank you for using CityRide Lite!");
         scanner.close(); //  used to close the Scanner object when you are finished using it
     }
@@ -56,8 +69,41 @@ public class MenuHandler {
         System.out.println("=========================================");
     }
 
+    private void setupRiderProfile() {
+        System.out.println("\n---Rider Profile---");
+        System.out.println("-------------------------------------");
+        System.out.println("1. Create new rider profile ");
+        System.out.println("2. Load existing rider profile ");
+        System.out.println("3. Continue as guest ");
+
+        boolean setupComplete = false;
+        while (!setupComplete) {
+            int choice = getIntInput("Enter your choice: ");
+
+            if (choice == 1){
+                createProfile();
+                setupComplete = true;
+            }else if (choice == 2){
+                boolean loaded = loadProfile();
+                if (loaded){
+                    setupComplete = true;
+                }
+            }else if (choice == 3){
+                activeProfile = new RiderProfile(
+                        "Guest",CityRideDataset.PassengerType.ADULT,
+                        PaymentOption.CONTACTLESS_CARD
+                );
+                System.out.println(" Continue as guest");
+                setupComplete = true;
+            }else{
+                System.out.println("Invalid choice. Choose either 1,2,3");
+            }
+        }
+    }
+
     private void displayMainMenu() {
         System.out.println("\n========== MAIN MENU ==========");
+        System.out.println("0. Profile Menu");
         System.out.println("1. Add Journey");
         System.out.println("2. List All Journeys");
         System.out.println("3. Filter Journeys");
@@ -65,12 +111,16 @@ public class MenuHandler {
         System.out.println("5. View Totals by Passenger Type");
         System.out.println("6. Remove Journey");
         System.out.println("7. Reset Day");
-        System.out.println("8. Exit");
+        System.out.println("8. Save Rider Profile");
+        System.out.println("9. Exit");
         System.out.println("================================");
     }
 
     private void processMenuChoice(int choice) {
         switch (choice) {
+            case MENU_PROFILE:
+                profileMenu();
+                break;
             case MENU_ADD_JOURNEY:
                 addJourney();
                 break;
@@ -98,6 +148,9 @@ public class MenuHandler {
             case MENU_RESET_DAY:
                 resetDay();
                 break;
+                case MENU_SAVE_PROFILE:
+                    saveProfile();
+                    break;
 
             case MENU_EXIT:
                 running = false;
@@ -107,6 +160,57 @@ public class MenuHandler {
                 System.out.println("Invalid choice! Please enter 1-8.");
         }
     }
+    private void  profileMenu() {
+        boolean profileMenuActive = true;
+
+        while (profileMenuActive) {
+            System.out.println("\n========== PROFILE MENU ==========");
+            System.out.println("1.  View Active Profile");
+            System.out.println("2.  Create New Profile");
+            System.out.println("3.  Load Profile");
+            System.out.println("4.  Save Profile");
+            System.out.println("5.  Back To Main Menu");
+            System.out.println("\n==================================");
+
+            int choice = getIntInput("Enter your choice: ");
+
+            if (choice == PROFILE_VIEW) {
+                viewProfile();
+            } else if (choice == PROFILE_CREATE) {
+                createProfile();
+            } else if (choice == PROFILE_LOAD) {
+                loadProfile();
+            } else if (choice == PROFILE_SAVE) {
+                saveProfile();
+            } else if (choice == PROFILE_BACK) {
+                profileMenuActive = false;
+            } else {
+                System.out.println("Invalid choice. Choose either 1-5");
+            }
+        }
+    }
+
+    private void viewProfile() {
+        System.out.println("---Active Rider Profile---");
+        System.out.println(activeProfile);
+    }
+
+    private void createProfile() {
+        System.out.println("---Create Rider Profile---");
+        String name = getStringInput("Enter Rider name: ");
+        CityRideDataset.PassengerType passengerType = getPassengerTypeInput();
+        PaymentOption paymentOption = getPaymentOptionInput();
+
+        activeProfile = new RiderProfile(name, passengerType, paymentOption);
+        System.out.println("Profile has been created successfully.");
+        viewProfile();
+
+        if(getYesNoInput("Save this profile now? (Y/N): ")){
+            saveProfile();
+        }
+    }
+
+
 
 
     private void addJourney() {
