@@ -2,51 +2,40 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
-public class FareCalculator {
+public final class FareCalculator {
 
-    private final SystemConfig config;
+    private FareCalculator() {}
 
-     //Calculates zones crossed using formula |to - from| + 1.
+    // Calculates the number of zones crossed by a journey using |to - from| + 1.
 
     public static int calculateZonesCrossed(int fromZone, int toZone) {
-        int zones;
-        zones = Math.abs(toZone - fromZone) + 1;
-        return zones;
+        return Math.abs(toZone - fromZone) + 1;
     }
 
-     // Gets base fare from CityRideDataset.
+
+    //Retrieves the base fare for a zone pair and time band from the dataset.
 
     public static BigDecimal getBaseFare(int fromZone, int toZone, CityRideDataset.TimeBand timeBand) {
-        BigDecimal fare;
-        fare = CityRideDataset.getBaseFare(fromZone, toZone, timeBand);
-
-        if (fare == null) {
-            fare = BigDecimal.ZERO;
-        }
-
-        return fare;
+        BigDecimal fare = CityRideDataset.getBaseFare(fromZone, toZone, timeBand);
+        return fare != null ? fare : BigDecimal.ZERO;
     }
 
-     // Applies discount to base fare.
+
+    // Applies a discount rate to a base fare.
 
     public static BigDecimal applyDiscount(BigDecimal baseFare, BigDecimal discountRate) {
-        BigDecimal discountAmount;
-        BigDecimal discountedFare;
-
-        discountAmount = baseFare.multiply(discountRate);
-        discountedFare = baseFare.subtract(discountAmount);
-        discountedFare = discountedFare.setScale(2, RoundingMode.HALF_UP);
-
-        return discountedFare;
+        BigDecimal discountAmount = baseFare.multiply(discountRate);
+        BigDecimal discountedFare = baseFare.subtract(discountAmount);
+        return discountedFare.setScale(2, RoundingMode.HALF_UP);
     }
 
-     // Calculates charged fare with daily cap consideration.
+    // Applies the daily cap, returning the portion of the discounted fare that
 
-    public static BigDecimal applyDailyCap(BigDecimal discountedFare, BigDecimal currentTotal, BigDecimal dailyCap) {
-        BigDecimal newTotal;
+    public static BigDecimal applyDailyCap(BigDecimal discountedFare,
+                                           BigDecimal currentTotal,
+                                           BigDecimal dailyCap) {
+        BigDecimal newTotal = currentTotal.add(discountedFare);
         BigDecimal chargedFare;
-
-        newTotal = currentTotal.add(discountedFare);
 
         if (newTotal.compareTo(dailyCap) > 0) {
             chargedFare = dailyCap.subtract(currentTotal);
@@ -57,36 +46,25 @@ public class FareCalculator {
             chargedFare = discountedFare;
         }
 
-        chargedFare = chargedFare.setScale(2, RoundingMode.HALF_UP);
-
-        return chargedFare;
+        return chargedFare.setScale(2, RoundingMode.HALF_UP);
     }
 
-     // Calculates the complete fare for a journey.
+
+    // Calculates the complete fare for a journey, setting all intermediate values
+    // (zones crossed, base fare, discount, charged fare) on the journey object.
 
     public static BigDecimal calculateFullFare(Journey journey, BigDecimal currentTotal) {
-        int zonesCrossed;
-        BigDecimal baseFare;
-        BigDecimal discountedFare;
-        BigDecimal dailyCap;
-        BigDecimal chargedFare;
-
-        // Calculate zones crossed
-        zonesCrossed = journey.calculateZonesCrossed();
+        int zonesCrossed = journey.calculateZonesCrossed();
         journey.setZonesCrossed(zonesCrossed);
 
-        // Get base fare from dataset
-        baseFare = getBaseFare(journey.getFromZone(), journey.getToZone(), journey.getTimeBand());
+        BigDecimal baseFare = getBaseFare(journey.getFromZone(), journey.getToZone(), journey.getTimeBand());
         journey.setBaseFare(baseFare);
 
-        // Apply passenger discount
-        discountedFare = applyDiscount(baseFare, journey.getDiscountRate());
+        BigDecimal discountedFare = applyDiscount(baseFare, journey.getDiscountRate());
 
-        // Apply daily cap
-        dailyCap = journey.getDailyCap();
-        chargedFare = applyDailyCap(discountedFare, currentTotal, dailyCap);
+        BigDecimal dailyCap = journey.getDailyCap();
+        BigDecimal chargedFare = applyDailyCap(discountedFare, currentTotal, dailyCap);
 
-        // Store discount rate and charged fare
         journey.setDiscountApplied(journey.getDiscountRate());
         journey.setChargedFare(chargedFare);
 
