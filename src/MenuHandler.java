@@ -8,19 +8,19 @@ import java.util.Scanner;
 public class MenuHandler {
 
     // Main menu constants
-    private static final int MENU_PROFILE         = 1;
-    private static final int MENU_ADD_JOURNEY     = 2;
-    private static final int MENU_LIST_JOURNEYS   = 3;
+    private static final int MENU_PROFILE        = 1;
+    private static final int MENU_ADD_JOURNEY    = 2;
+    private static final int MENU_LIST_JOURNEYS  = 3;
     private static final int MENU_FILTER_JOURNEYS = 4;
-    private static final int MENU_EDIT_JOURNEY    = 5;
-    private static final int MENU_REMOVE_JOURNEY  = 6;
-    private static final int MENU_DAILY_SUMMARY   = 7;
-    private static final int MENU_TOTALS_BY_TYPE  = 8;
-    private static final int MENU_IMPORT_CSV      = 9;
-    private static final int MENU_EXPORT_REPORTS  = 10;
-    private static final int MENU_RESET_DAY       = 11;
-    private static final int MENU_ADMIN           = 12;
-    private static final int MENU_EXIT            = 13;
+    private static final int MENU_EDIT_JOURNEY   = 5;
+    private static final int MENU_REMOVE_JOURNEY = 6;
+    private static final int MENU_DAILY_SUMMARY  = 7;
+    private static final int MENU_TOTALS_BY_TYPE = 8;
+    private static final int MENU_IMPORT_CSV     = 9;
+    private static final int MENU_EXPORT_REPORTS = 10;
+    private static final int MENU_RESET_DAY      = 11;
+    private static final int MENU_ADMIN          = 12;
+    private static final int MENU_EXIT           = 13;
 
     // Filter sub-menu constants
     private static final int FILTER_BY_PASSENGER_TYPE = 1;
@@ -39,18 +39,17 @@ public class MenuHandler {
     private boolean running;
 
     public MenuHandler() {
-        this.scanner = new Scanner(System.in);
-        this.journeyManager = new JourneyManager();
+        this.scanner           = new Scanner(System.in);
+        this.journeyManager    = new JourneyManager();
         this.journeyFileHandler = new JourneyFileHandler();
-        this.reportExporter = new ReportExporter();
+        this.reportExporter    = new ReportExporter();
         this.profileFileHandler = new ProfileFileHandler();
-        this.riderProfile = null;
-        this.running = true;
+        this.riderProfile      = null;
+        this.running           = true;
     }
 
 
-     // Starts the application: shows welcome message then enters the main menu loop.
-     // On exit, offers to save the day's state.
+    // Starts the application: shows welcome message then enters the main menu loop.
 
     public void start() {
         displayWelcomeMessage();
@@ -68,8 +67,6 @@ public class MenuHandler {
 
 
     // Menu display and dispatch
-
-
     private void displayWelcomeMessage() {
         System.out.println("\n=========================================");
         System.out.println("       WELCOME TO CITYRIDE LITE");
@@ -80,7 +77,6 @@ public class MenuHandler {
 
     private void displayMainMenu() {
         String profileStatus = riderProfile != null ? riderProfile.getName() : "No profile";
-
         System.out.println("\n========== MAIN MENU (" + profileStatus + ") ==========");
         System.out.println(" 1. Manage Profile");
         System.out.println(" 2. Add Journey");
@@ -100,58 +96,19 @@ public class MenuHandler {
 
     private void processMenuChoice(int choice) {
         switch (choice) {
-            case MENU_PROFILE:
-                manageProfile();
-                break;
-
-            case MENU_ADD_JOURNEY:
-                addJourney();
-                break;
-
-            case MENU_LIST_JOURNEYS:
-                listAllJourneys();
-                break;
-
-            case MENU_FILTER_JOURNEYS:
-                filterJourneys();
-                break;
-
-            case MENU_EDIT_JOURNEY:
-                editJourney();
-                break;
-
-            case MENU_REMOVE_JOURNEY:
-                removeJourney();
-                break;
-
-            case MENU_DAILY_SUMMARY:
-                displayDailySummary();
-                break;
-
-            case MENU_TOTALS_BY_TYPE:
-                displayTotalsByType();
-                break;
-
-            case MENU_IMPORT_CSV:
-                importJourneysFromCsv();
-                break;
-
-            case MENU_EXPORT_REPORTS:
-                exportReports();
-                break;
-
-            case MENU_RESET_DAY:
-                resetDay();
-                break;
-
-            case MENU_ADMIN:
-                openAdminMenu();
-                break;
-
-            case MENU_EXIT:
-                running = false;
-                break;
-
+            case MENU_PROFILE:        manageProfile();       break;
+            case MENU_ADD_JOURNEY:    addJourney();          break;
+            case MENU_LIST_JOURNEYS:  listAllJourneys();     break;
+            case MENU_FILTER_JOURNEYS: filterJourneys();     break;
+            case MENU_EDIT_JOURNEY:   editJourney();         break;
+            case MENU_REMOVE_JOURNEY: removeJourney();       break;
+            case MENU_DAILY_SUMMARY:  displayDailySummary(); break;
+            case MENU_TOTALS_BY_TYPE: displayTotalsByType(); break;
+            case MENU_IMPORT_CSV:     importJourneysFromCsv(); break;
+            case MENU_EXPORT_REPORTS: exportReports();       break;
+            case MENU_RESET_DAY:      resetDay();            break;
+            case MENU_ADMIN:          openAdminMenu();       break;
+            case MENU_EXIT:           running = false;       break;
             default:
                 System.out.println("Invalid choice. Please enter 1-13.");
         }
@@ -159,8 +116,6 @@ public class MenuHandler {
 
 
     // Profile management
-
-
     private void manageProfile() {
         System.out.println("\n--- Manage Profile ---");
         System.out.println("1. Create new profile");
@@ -171,23 +126,11 @@ public class MenuHandler {
         int choice = getIntInput("Enter choice: ");
 
         switch (choice) {
-            case 1:
-                createProfile();
-                break;
-
-            case 2:
-                loadProfile();
-                break;
-
-            case 3:
-                viewProfile();
-                break;
-
-            case 4:
-                break;
-
-            default:
-                System.out.println("Invalid option.");
+            case 1: createProfile();  break;
+            case 2: loadProfile();    break;
+            case 3: viewProfile();    break;
+            case 4: break;
+            default: System.out.println("Invalid option.");
         }
     }
 
@@ -196,7 +139,6 @@ public class MenuHandler {
 
         System.out.print("Enter your name: ");
         String name = scanner.nextLine().trim();
-
         if (!InputValidator.isNonBlank(name)) {
             System.out.println("Error: Name cannot be blank.");
             return;
@@ -206,14 +148,12 @@ public class MenuHandler {
         PaymentOption payment = getPaymentOptionInput();
 
         riderProfile = new RiderProfile(name, type, payment);
-
         System.out.println("\nProfile created:");
         System.out.println("  " + riderProfile);
 
         System.out.print("Save this profile to file? (Y/N): ");
         if (scanner.nextLine().trim().equalsIgnoreCase("Y")) {
             boolean saved = profileFileHandler.saveProfile(riderProfile);
-
             if (saved) {
                 System.out.println("Profile saved successfully.");
             }
@@ -222,7 +162,6 @@ public class MenuHandler {
 
     private void loadProfile() {
         System.out.println("\n--- Load Profile ---");
-
         String[] saved = profileFileHandler.listSavedProfiles();
 
         if (saved.length == 0) {
@@ -239,7 +178,6 @@ public class MenuHandler {
         String name = scanner.nextLine().trim();
 
         RiderProfile loaded = profileFileHandler.loadProfile(name);
-
         if (loaded != null) {
             riderProfile = loaded;
             System.out.println("Profile loaded: " + riderProfile);
@@ -258,7 +196,6 @@ public class MenuHandler {
 
     // Journey operations
 
-
     private void addJourney() {
         System.out.println("\n--- Add New Journey ---");
 
@@ -267,12 +204,11 @@ public class MenuHandler {
         int fromZone = getZoneInput("Enter starting zone (1-5): ");
         int toZone = getZoneInput("Enter destination zone (1-5): ");
 
+        // Default to profile passenger type if profile is set
         CityRideDataset.PassengerType passengerType;
-
         if (riderProfile != null) {
             System.out.println("Passenger type from profile: " + riderProfile.getPassengerType());
             System.out.print("Use profile type? (Y/N): ");
-
             if (scanner.nextLine().trim().equalsIgnoreCase("Y")) {
                 passengerType = riderProfile.getPassengerType();
             } else {
@@ -297,8 +233,8 @@ public class MenuHandler {
     }
 
 
-     //Allows the rider to edit the from/to zones and time band of an existing journey.
-     //Recalculates all fares after the edit.
+    // Allows the rider to edit the from/to zones and time band of an existing journey.
+    //Recalculates all fares after the edit.
 
     private void editJourney() {
         System.out.println("\n--- Edit Journey ---");
@@ -309,7 +245,6 @@ public class MenuHandler {
         }
 
         listAllJourneys();
-
         int id = getIntInput("Enter journey ID to edit: ");
         Journey journey = journeyManager.getJourneyById(id);
 
@@ -321,13 +256,12 @@ public class MenuHandler {
         System.out.println("Editing: " + journey);
         System.out.println("Press Enter to keep the current value.");
 
+        // From zone
         System.out.print("New starting zone (1-5) [current: " + journey.getFromZone() + "]: ");
         String fromInput = scanner.nextLine().trim();
-
         if (!fromInput.isEmpty()) {
             if (InputValidator.isValidInteger(fromInput)) {
                 int newFrom = Integer.parseInt(fromInput);
-
                 if (InputValidator.isValidZone(newFrom)) {
                     journey.setFromZone(newFrom);
                 } else {
@@ -338,13 +272,12 @@ public class MenuHandler {
             }
         }
 
+        // To zone
         System.out.print("New destination zone (1-5) [current: " + journey.getToZone() + "]: ");
         String toInput = scanner.nextLine().trim();
-
         if (!toInput.isEmpty()) {
             if (InputValidator.isValidInteger(toInput)) {
                 int newTo = Integer.parseInt(toInput);
-
                 if (InputValidator.isValidZone(newTo)) {
                     journey.setToZone(newTo);
                 } else {
@@ -355,9 +288,9 @@ public class MenuHandler {
             }
         }
 
+        // Time band
         System.out.print("New time band (PEAK/OFF_PEAK) [current: " + journey.getTimeBand() + "]: ");
         String bandInput = scanner.nextLine().trim();
-
         if (!bandInput.isEmpty()) {
             if (InputValidator.isValidTimeBand(bandInput)) {
                 journey.setTimeBand(InputValidator.parseTimeBand(bandInput));
@@ -366,15 +299,14 @@ public class MenuHandler {
             }
         }
 
+        // Recalculate all fares after the edit
         journeyManager.recalculateAllFares();
-
         System.out.println("Journey updated. All totals recalculated.");
         System.out.println("Updated: " + journeyManager.getJourneyById(id));
     }
 
     private void listAllJourneys() {
         List<Journey> journeys = journeyManager.getAllJourneys();
-
         System.out.println("\n--- All Journeys ---");
 
         if (journeys.isEmpty()) {
@@ -384,11 +316,9 @@ public class MenuHandler {
 
         System.out.println("Total journeys: " + journeys.size());
         System.out.println("-".repeat(80));
-
         for (Journey journey : journeys) {
             System.out.println(journey);
         }
-
         System.out.println("-".repeat(80));
         System.out.printf("Total cost for the day: £%.2f%n", journeyManager.getTotalCost());
     }
@@ -402,7 +332,6 @@ public class MenuHandler {
         }
 
         listAllJourneys();
-
         int id = getIntInput("Enter journey ID to remove: ");
         Journey toRemove = journeyManager.getJourneyById(id);
 
@@ -412,10 +341,8 @@ public class MenuHandler {
         }
 
         System.out.print("Remove journey " + id + "? (Y/N): ");
-
         if (scanner.nextLine().trim().equalsIgnoreCase("Y")) {
             boolean removed = journeyManager.removeJourneyById(id);
-
             if (removed) {
                 System.out.println("Journey " + id + " removed. All totals recalculated.");
             } else {
@@ -428,39 +355,20 @@ public class MenuHandler {
 
 
     // Filter journeys
-
-
     private void filterJourneys() {
         boolean filterActive = true;
 
         while (filterActive) {
             displayFilterMenu();
-
             int choice = getIntInput("Enter your choice: ");
 
             switch (choice) {
-                case FILTER_BY_PASSENGER_TYPE:
-                    filterByPassengerType();
-                    break;
-
-                case FILTER_BY_TIME_BAND:
-                    filterByTimeBand();
-                    break;
-
-                case FILTER_BY_ZONE:
-                    filterByZone();
-                    break;
-
-                case FILTER_BY_DATE:
-                    filterByDate();
-                    break;
-
-                case FILTER_BACK_TO_MAIN:
-                    filterActive = false;
-                    break;
-
-                default:
-                    System.out.println("Invalid choice. Please enter 1-5.");
+                case FILTER_BY_PASSENGER_TYPE: filterByPassengerType(); break;
+                case FILTER_BY_TIME_BAND:      filterByTimeBand();      break;
+                case FILTER_BY_ZONE:           filterByZone();          break;
+                case FILTER_BY_DATE:           filterByDate();          break;
+                case FILTER_BACK_TO_MAIN:      filterActive = false;    break;
+                default: System.out.println("Invalid choice. Please enter 1-5.");
             }
         }
     }
@@ -477,101 +385,67 @@ public class MenuHandler {
 
     private void filterByPassengerType() {
         System.out.println("\n--- Filter by Passenger Type ---");
-
         CityRideDataset.PassengerType type = getPassengerTypeInput();
-
-        displayFilterResults(
-                journeyManager.getJourneysByPassengerType(type),
-                "Passenger Type: " + type
-        );
+        displayFilterResults(journeyManager.getJourneysByPassengerType(type),
+                "Passenger Type: " + type);
     }
 
     private void filterByTimeBand() {
         System.out.println("\n--- Filter by Time Band ---");
-
         CityRideDataset.TimeBand band = getTimeBandInput();
-
-        displayFilterResults(
-                journeyManager.getJourneysByTimeBand(band),
-                "Time Band: " + band
-        );
+        displayFilterResults(journeyManager.getJourneysByTimeBand(band),
+                "Time Band: " + band);
     }
 
     private void filterByZone() {
         System.out.println("\n--- Filter by Zone ---");
-
         int zone = getZoneInput("Enter zone number (1-5): ");
 
         System.out.println("1. Starting zone (from)");
         System.out.println("2. Destination zone (to)");
         System.out.println("3. Either zone");
-
         int choice = getIntInput("Enter choice: ");
 
         List<Journey> filtered;
-
         switch (choice) {
-            case 1:
-                filtered = journeyManager.getJourneysByFromZone(zone);
-                break;
-
-            case 2:
-                filtered = journeyManager.getJourneysByToZone(zone);
-                break;
-
-            case 3:
-                filtered = journeyManager.getJourneysByZone(zone);
-                break;
-
+            case 1:  filtered = journeyManager.getJourneysByFromZone(zone); break;
+            case 2:  filtered = journeyManager.getJourneysByToZone(zone);   break;
+            case 3:  filtered = journeyManager.getJourneysByZone(zone);     break;
             default:
                 System.out.println("Invalid choice.");
                 return;
         }
-
         displayFilterResults(filtered, "Zone: " + zone);
     }
 
     private void filterByDate() {
         System.out.println("\n--- Filter by Date ---");
-
         LocalDate date = getDateInput("Enter date (DD/MM/YYYY): ");
-
-        displayFilterResults(
-                journeyManager.getJourneysByDate(date),
-                "Date: " + date
-        );
+        displayFilterResults(journeyManager.getJourneysByDate(date),
+                "Date: " + date);
     }
 
     private void displayFilterResults(List<Journey> journeys, String filterDesc) {
         System.out.println("\n--- Filter Results: " + filterDesc + " ---");
-
         if (journeys.isEmpty()) {
             System.out.println("No journeys match this filter.");
             return;
         }
-
         System.out.println("Matching journeys: " + journeys.size());
         System.out.println("-".repeat(80));
-
         for (Journey journey : journeys) {
             System.out.println(journey);
         }
-
         System.out.println("-".repeat(80));
-
         BigDecimal total = BigDecimal.ZERO;
-
         for (Journey journey : journeys) {
             total = total.add(journey.getChargedFare());
         }
-
         System.out.printf("Total cost for filtered journeys: £%.2f%n", total);
     }
 
 
     // Summary and totals display
-
-
     private void displayDailySummary() {
         System.out.println("\n========== DAILY SUMMARY ==========");
 
@@ -589,36 +463,25 @@ public class MenuHandler {
         System.out.printf("Average cost/journey : £%.2f%n", averageCost);
 
         if (mostExpensive != null) {
-            System.out.printf(
-                    "Most expensive       : Journey #%d (£%.2f)%n",
-                    mostExpensive.getJourneyId(),
-                    mostExpensive.getChargedFare()
-            );
+            System.out.printf("Most expensive       : Journey #%d (£%.2f)%n",
+                    mostExpensive.getJourneyId(), mostExpensive.getChargedFare());
         }
 
+        // Cap status and savings
         System.out.println("\n--- Cap Status & Savings ---");
-
         for (CityRideDataset.PassengerType type : CityRideDataset.PassengerType.values()) {
             int count = journeyManager.getJourneyCountByType(type);
-
-            if (count == 0) {
-                continue;
-            }
-
+            if (count == 0) continue;
             BigDecimal preDiscount = journeyManager.getPreDiscountTotalByType(type);
             BigDecimal charged = journeyManager.getPassengerTotal(type);
             BigDecimal savings = preDiscount.subtract(charged);
             boolean capReached = journeyManager.isCapReached(type);
 
-            System.out.printf(
-                    "  %-15s %d journey(s) | Saved: £%.2f | Cap: %s%n",
-                    type,
-                    count,
-                    savings,
-                    capReached ? "REACHED" : "Not reached"
-            );
+            System.out.printf("  %-15s %d journey(s) | Saved: £%.2f | Cap: %s%n",
+                    type, count, savings, capReached ? "REACHED" : "Not reached");
         }
 
+        // Category counts
         displayCategoryCounts();
     }
 
@@ -631,7 +494,6 @@ public class MenuHandler {
         System.out.println("Off-peak journeys : " + timeBandCounts.get("OFF_PEAK"));
 
         System.out.println("\nZone usage:");
-
         if (zoneUsage.isEmpty()) {
             System.out.println("  No zone usage data available.");
         } else {
@@ -641,51 +503,33 @@ public class MenuHandler {
         }
     }
 
+    // (OpenAI, 2024) — table formatting pattern adapted from ChatGPT suggestion
     private void displayTotalsByType() {
         System.out.println("\n========== TOTALS BY PASSENGER TYPE ==========");
-
-        System.out.printf(
-                "%-15s %10s %12s %12s %10s %12s%n",
-                "Type",
-                "Journeys",
-                "Pre-Discount",
-                "Discounted",
-                "Charged",
-                "Cap Reached"
-        );
-
+        System.out.printf("%-15s %10s %12s %12s %10s %12s%n",
+                "Type", "Journeys", "Pre-Discount", "Discounted", "Charged", "Cap Reached");
         System.out.println("-".repeat(75));
 
         for (CityRideDataset.PassengerType type : CityRideDataset.PassengerType.values()) {
-            int journeyCount = journeyManager.getJourneyCountByType(type);
+            int journeyCount       = journeyManager.getJourneyCountByType(type);
             BigDecimal preDiscount = journeyManager.getPreDiscountTotalByType(type);
-            BigDecimal discounted = journeyManager.getDiscountedTotalByType(type);
-            BigDecimal charged = journeyManager.getPassengerTotal(type);
-            boolean capReached = journeyManager.isCapReached(type);
+            BigDecimal discounted  = journeyManager.getDiscountedTotalByType(type);
+            BigDecimal charged     = journeyManager.getPassengerTotal(type);
+            boolean capReached     = journeyManager.isCapReached(type);
 
-            System.out.printf(
-                    "%-15s %10d £%10.2f £%10.2f £%8.2f %12s%n",
-                    type,
-                    journeyCount,
-                    preDiscount,
-                    discounted,
-                    charged,
-                    capReached ? "YES" : "NO"
-            );
+            System.out.printf("%-15s %10d £%10.2f £%10.2f £%8.2f %12s%n",
+                    type, journeyCount, preDiscount, discounted, charged,
+                    capReached ? "YES" : "NO");
         }
-
         System.out.println("=".repeat(75));
     }
 
-
     // CSV import / export
-
-
+//#(Chatgpt,2026)
     private void importJourneysFromCsv() {
         System.out.println("\n--- Import Journeys from CSV ---");
         System.out.println("Place your CSV file in the 'imports/' folder.");
         System.out.print("Enter filename (without .csv extension): ");
-
         String filename = scanner.nextLine().trim();
 
         if (!InputValidator.isNonBlank(filename)) {
@@ -701,14 +545,11 @@ public class MenuHandler {
         }
 
         System.out.println(imported.size() + " journey(s) found. Adding to today's session...");
-
         int added = 0;
-
         for (Journey journey : imported) {
             journeyManager.addJourney(journey);
             added++;
         }
-
         System.out.println(added + " journey(s) imported successfully.");
     }
 
@@ -727,28 +568,23 @@ public class MenuHandler {
         System.out.println("2. Export text summary");
         System.out.println("3. Export both");
         System.out.println("4. Export journeys CSV (raw data only)");
-
         int choice = getIntInput("Enter choice: ");
 
         switch (choice) {
             case 1:
                 reportExporter.exportCsvReport(journeyManager, riderName, today);
                 break;
-
             case 2:
                 reportExporter.exportTextSummary(journeyManager, riderName, today);
                 break;
-
             case 3:
                 reportExporter.exportCsvReport(journeyManager, riderName, today);
                 reportExporter.exportTextSummary(journeyManager, riderName, today);
                 break;
-
             case 4:
                 String filename = riderName + "_journeys_" + today;
                 journeyFileHandler.exportJourneysToCsv(journeyManager.getAllJourneys(), filename);
                 break;
-
             default:
                 System.out.println("Invalid choice.");
         }
@@ -756,11 +592,9 @@ public class MenuHandler {
 
 
     // Reset and exit
-
     private void resetDay() {
         System.out.println("\n--- Reset Day ---");
         System.out.print("WARNING: This will delete ALL journeys. Continue? (Y/N): ");
-
         if (scanner.nextLine().trim().equalsIgnoreCase("Y")) {
             journeyManager.resetDay();
             System.out.println("Day reset. All journeys cleared.");
@@ -770,174 +604,111 @@ public class MenuHandler {
     }
 
 
-      //When the user chooses to exit, offer to save the profile and export reports.
+    // When the user chooses to exit, offer to save the profile and export reports.
 
     private void offerSaveOnExit() {
         System.out.println("\n--- Save Before Exit ---");
 
         if (riderProfile != null && journeyManager.getJourneyCount() > 0) {
             System.out.print("Save current journey report before exiting? (Y/N): ");
-
             if (scanner.nextLine().trim().equalsIgnoreCase("Y")) {
-                reportExporter.exportCsvReport(
-                        journeyManager,
-                        riderProfile.getName(),
-                        LocalDate.now()
-                );
-
-                reportExporter.exportTextSummary(
-                        journeyManager,
-                        riderProfile.getName(),
-                        LocalDate.now()
-                );
+                reportExporter.exportCsvReport(journeyManager, riderProfile.getName(), LocalDate.now());
+                reportExporter.exportTextSummary(journeyManager, riderProfile.getName(), LocalDate.now());
             }
         }
 
         if (riderProfile != null) {
             System.out.print("Save profile? (Y/N): ");
-
             if (scanner.nextLine().trim().equalsIgnoreCase("Y")) {
                 profileFileHandler.saveProfile(riderProfile);
             }
         }
     }
 
-
     // Admin menu
-
-
     private void openAdminMenu() {
         AdminMenuHandler adminMenu = new AdminMenuHandler(scanner);
         adminMenu.start();
     }
-
-
     // Input helpers
 
-
+    // (GitHub Copilot, 2024) — date input loop pattern assisted by Copilot suggestion
     private LocalDate getDateInput(String prompt) {
-        boolean validInput = false;
-        LocalDate date = null;
-
-        while (!validInput) {
+        while (true) {
             System.out.print(prompt);
             String input = scanner.nextLine().trim();
 
             if (input.isEmpty()) {
-                date = LocalDate.now();
-                validInput = true;
-            } else if (InputValidator.isValidDate(input)) {
-                date = InputValidator.parseDate(input);
-                validInput = true;
-            } else {
-                System.out.println("Error: Invalid date format. Use DD/MM/YYYY (e.g. 24/06/2026).");
+                return LocalDate.now();
             }
+            if (InputValidator.isValidDate(input)) {
+                return InputValidator.parseDate(input);
+            }
+            System.out.println("Error: Invalid date format. Use DD/MM/YYYY (e.g. 24/06/2026).");
         }
-
-        return date;
     }
 
     private CityRideDataset.TimeBand getTimeBandInput() {
-        boolean validInput = false;
-        CityRideDataset.TimeBand timeBand = null;
-
-        while (!validInput) {
+        while (true) {
             System.out.print("Enter time band (PEAK / OFF_PEAK): ");
             String input = scanner.nextLine().trim().toUpperCase();
-
             if (InputValidator.isValidTimeBand(input)) {
-                timeBand = InputValidator.parseTimeBand(input);
-                validInput = true;
-            } else {
-                System.out.println("Error: Invalid time band. Enter PEAK or OFF_PEAK.");
+                return InputValidator.parseTimeBand(input);
             }
+            System.out.println("Error: Invalid time band. Enter PEAK or OFF_PEAK.");
         }
-
-        return timeBand;
     }
 
     private int getZoneInput(String prompt) {
-        boolean validInput = false;
-        int zone = 0;
-
-        while (!validInput) {
-            zone = getIntInput(prompt);
-
+        while (true) {
+            int zone = getIntInput(prompt);
             if (InputValidator.isValidZone(zone)) {
-                validInput = true;
-            } else {
-                System.out.println("Error: Zone must be between 1 and 5.");
+                return zone;
             }
+            System.out.println("Error: Zone must be between 1 and 5.");
         }
-
-        return zone;
     }
 
     private CityRideDataset.PassengerType getPassengerTypeInput() {
-        boolean validInput = false;
-        CityRideDataset.PassengerType passengerType = null;
-
-        while (!validInput) {
+        while (true) {
             System.out.print("Enter passenger type (ADULT/STUDENT/CHILD/SENIOR_CITIZEN): ");
             String input = scanner.nextLine().trim().toUpperCase();
-
             if (InputValidator.isValidPassengerType(input)) {
-                passengerType = InputValidator.parsePassengerType(input);
-                validInput = true;
-            } else {
-                System.out.println("Error: Invalid passenger type. Choose from ADULT, STUDENT, CHILD, SENIOR_CITIZEN.");
+                return InputValidator.parsePassengerType(input);
             }
+            System.out.println("Error: Invalid passenger type. Choose from ADULT, STUDENT, CHILD, SENIOR_CITIZEN.");
         }
-
-        return passengerType;
     }
 
     private PaymentOption getPaymentOptionInput() {
         System.out.println("Payment options:");
-
         PaymentOption[] options = PaymentOption.values();
-
         for (int i = 0; i < options.length; i++) {
             System.out.println("  " + (i + 1) + ". " + options[i].getDisplayLabel());
         }
 
-        boolean validInput = false;
-        PaymentOption option = null;
-
-        while (!validInput) {
+        while (true) {
             System.out.print("Enter choice (1-" + options.length + "): ");
             String input = scanner.nextLine().trim();
-
-            option = InputValidator.parsePaymentOption(input);
-
+            PaymentOption option = InputValidator.parsePaymentOption(input);
             if (option != null) {
-                validInput = true;
-            } else {
-                System.out.println("Error: Please enter a number between 1 and " + options.length + ".");
+                return option;
             }
+            System.out.println("Error: Please enter a number between 1 and " + options.length + ".");
         }
-
-        return option;
     }
 
     private int getIntInput(String prompt) {
-        boolean validInput = false;
-        int number = 0;
-
-        while (!validInput) {
+        while (true) {
             System.out.print(prompt);
             String input = scanner.nextLine().trim();
-
             if (input.isEmpty()) {
                 System.out.println("Error: Input cannot be blank.");
             } else if (InputValidator.isValidInteger(input)) {
-                number = Integer.parseInt(input);
-                validInput = true;
+                return Integer.parseInt(input);
             } else {
                 System.out.println("Error: Please enter a valid whole number.");
             }
         }
-
-        return number;
     }
 }

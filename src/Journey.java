@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 
 public class Journey {
 
-    // Private fields
     private int journeyId;
     private LocalDate date;
     private CityRideDataset.TimeBand timeBand;
@@ -17,45 +16,50 @@ public class Journey {
     private BigDecimal discountApplied;
     private BigDecimal chargedFare;
 
+    private static final DateTimeFormatter DATE_FORMATTER =
+            DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-     // Constructor for creating a new journey.
+
+    // Constructs a new Journey with the core travel details.
+    // Fare fields default to zero and are set by FareCalculator.
 
     public Journey(int journeyId, LocalDate date, CityRideDataset.TimeBand timeBand,
                    int fromZone, int toZone, CityRideDataset.PassengerType passengerType) {
-        this.journeyId = journeyId;
-        this.date = date;
-        this.timeBand = timeBand;
-        this.fromZone = fromZone;
-        this.toZone = toZone;
+        this.journeyId     = journeyId;
+        this.date          = date;
+        this.timeBand      = timeBand;
+        this.fromZone      = fromZone;
+        this.toZone        = toZone;
         this.passengerType = passengerType;
-        this.zonesCrossed = 0;
-        this.baseFare = BigDecimal.ZERO;
+        this.zonesCrossed  = 0;
+        this.baseFare      = BigDecimal.ZERO;
         this.discountApplied = BigDecimal.ZERO;
-        this.chargedFare = BigDecimal.ZERO;
+        this.chargedFare   = BigDecimal.ZERO;
     }
 
 
-     // Calculates zones crossed using formula: |toZone - fromZone| + 1
+    // Calculates the number of zones crossed: |toZone - fromZone| + 1.
 
     public int calculateZonesCrossed() {
         return Math.abs(toZone - fromZone) + 1;
     }
 
 
-     // Gets discount rate from CityRideDataset.
+    // Returns the discount rate for this journey's passenger type.
 
     public BigDecimal getDiscountRate() {
         return CityRideDataset.DISCOUNT_RATE.get(passengerType);
     }
 
 
-     // Gets daily cap from CityRideDataset.
+    //Returns the daily cap for this journey's passenger type.
 
     public BigDecimal getDailyCap() {
         return CityRideDataset.DAILY_CAP.get(passengerType);
     }
 
-    // Getters and Setters
+    // --- Getters and Setters ---
+
     public int getJourneyId() { return journeyId; }
     public void setJourneyId(int journeyId) { this.journeyId = journeyId; }
 
@@ -72,7 +76,9 @@ public class Journey {
     public void setToZone(int toZone) { this.toZone = toZone; }
 
     public CityRideDataset.PassengerType getPassengerType() { return passengerType; }
-    public void setPassengerType(CityRideDataset.PassengerType passengerType) { this.passengerType = passengerType; }
+    public void setPassengerType(CityRideDataset.PassengerType passengerType) {
+        this.passengerType = passengerType;
+    }
 
     public int getZonesCrossed() { return zonesCrossed; }
     public void setZonesCrossed(int zonesCrossed) { this.zonesCrossed = zonesCrossed; }
@@ -87,16 +93,14 @@ public class Journey {
     public void setChargedFare(BigDecimal chargedFare) { this.chargedFare = chargedFare; }
 
 
-     // Returns formatted string representation of the journey.
+    // Returns a formatted one-line summary of this journey for display.
 
+    @Override
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String fomattdate = date.format(formatter);
-
-        double discountPercentage = discountApplied != null ? discountApplied.doubleValue() * 100 : 0 ;
-        return String.format("ID: %d | Date: %s | From: %d | To: %d | Time: %s | " +
+        return String.format(
+                "ID: %d | Date: %s | From: %d | To: %d | Time: %s | " +
                         "Passenger: %s | Zones: %d | Base: £%.2f | Charged: £%.2f",
-                journeyId, date.format(formatter), fromZone, toZone, timeBand,
+                journeyId, date.format(DATE_FORMATTER), fromZone, toZone, timeBand,
                 passengerType, zonesCrossed, baseFare, chargedFare);
     }
 }
