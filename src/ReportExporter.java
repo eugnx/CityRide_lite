@@ -15,8 +15,7 @@ public class ReportExporter {
     private static final DateTimeFormatter FILE_DATE_FORMATTER =
             DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-
-     // Exports a CSV report containing every journey and a summary footer.
+    //Exports a CSV report containing every journey and a summary footer.
 
     public boolean exportCsvReport(JourneyManager journeyManager, String riderName, LocalDate date) {
         try {
@@ -70,7 +69,9 @@ public class ReportExporter {
         }
     }
 
-     //Exports a human-readable text summary of the day's journeys.
+
+    //Exports a human-readable text summary of the day's journeys.
+
     public boolean exportTextSummary(JourneyManager journeyManager, String riderName, LocalDate date) {
         try {
             Files.createDirectories(Paths.get(REPORT_DIR));
@@ -172,8 +173,6 @@ public class ReportExporter {
 
 
     // Private helpers
-
-
     private String buildFilename(String riderName, LocalDate date, String extension) {
         String safeName = riderName.trim().replaceAll("[^a-zA-Z0-9_\\-]", "_").toLowerCase();
         String dateStr = date.format(FILE_DATE_FORMATTER);

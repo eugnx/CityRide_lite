@@ -7,8 +7,7 @@ public class ProfileFileHandler {
     private static final String PROFILE_DIR = "profiles/";
     private static final String FILE_EXTENSION = ".json";
 
-
-     // Saves a RiderProfile to a JSON file named after the rider.
+    // Saves a RiderProfile to a JSON file named after the rider.
 
     public boolean saveProfile(RiderProfile profile) {
         try {
@@ -23,7 +22,8 @@ public class ProfileFileHandler {
         }
     }
 
-     // Loads a RiderProfile from a JSON file by rider name.
+
+    // Loads a RiderProfile from a JSON file by rider name.
 
     public RiderProfile loadProfile(String name) {
         String filename = PROFILE_DIR + sanitiseFilename(name) + FILE_EXTENSION;
@@ -43,8 +43,7 @@ public class ProfileFileHandler {
         }
     }
 
-
-     // Lists all saved profile names by scanning the profiles directory.
+    //Lists all saved profile names by scanning the profiles directory.
 
     public String[] listSavedProfiles() {
         File dir = new File(PROFILE_DIR);
@@ -64,10 +63,7 @@ public class ProfileFileHandler {
 
 
     // Private helpers
-
-
-
-     //Serialises a RiderProfile to a JSON string.
+    // Serialises a RiderProfile to a JSON string.
 
     private String serialiseProfile(RiderProfile profile) {
         return "{\n" +
@@ -77,8 +73,7 @@ public class ProfileFileHandler {
                 "}";
     }
 
-
-     //Deserialises a RiderProfile from a simple JSON string.
+    //Deserialises a RiderProfile from a simple JSON string.
 
     private RiderProfile deserialiseProfile(String json) {
         String name = extractJsonValue(json, "name");
@@ -108,9 +103,7 @@ public class ProfileFileHandler {
 
         return new RiderProfile(name, passengerType, paymentOption);
     }
-
-
-     // Extracts the string value for a given key from a simple JSON object.
+// Extracts the string value for a given key from a simple JSON object.
 
     private String extractJsonValue(String json, String key) {
         String searchKey = "\"" + key + "\"";
@@ -132,11 +125,14 @@ public class ProfileFileHandler {
         }
         return json.substring(openQuote + 1, closeQuote);
     }
-
+// Converts a rider name into a safe filename by replacing spaces and
 
     private String sanitiseFilename(String name) {
         return name.trim().replaceAll("[^a-zA-Z0-9_\\-]", "_").toLowerCase();
     }
+
+
+    //Escapes special characters for JSON string values.
 
     private String escapeJson(String value) {
         return value.replace("\\", "\\\\").replace("\"", "\\\"");

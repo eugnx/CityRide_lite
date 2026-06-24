@@ -1,4 +1,3 @@
-
 public enum PaymentOption {
 
     CONTACTLESS("Contactless Card"),

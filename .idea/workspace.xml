@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 2 v3.4">
-      <change beforePath="$PROJECT_DIR$/src/Journey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Journey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JourneyFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JourneyFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JourneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JourneyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuHandler.java" afterDir="false" />
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 2 v3.5">
       <change beforePath="$PROJECT_DIR$/src/PaymentOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReportExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReportExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RiderProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RiderProfile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782266772746</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Part 2 milestone 2 v3.5">
+      <option name="closed" value="true" />
+      <created>1782305217027</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1782305217027</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +373,7 @@
     <MESSAGE value="Part 2 milestone 2 code adjustment" />
     <MESSAGE value="Part 2 milestone 2 v3.3" />
     <MESSAGE value="Part 2 milestone 2 v3.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 2 v3.4" />
+    <MESSAGE value="Part 2 milestone 2 v3.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 2 v3.5" />
   </component>
 </project>
