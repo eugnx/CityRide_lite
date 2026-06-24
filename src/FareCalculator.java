@@ -3,6 +3,9 @@ import java.math.RoundingMode;
 
 
 public class FareCalculator {
+
+    private final SystemConfig config;
+
      //Calculates zones crossed using formula |to - from| + 1.
 
     public static int calculateZonesCrossed(int fromZone, int toZone) {

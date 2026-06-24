@@ -1,131 +1,93 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-
+import java.math.BigDecimal;
 
 public class InputValidator {
-    //#(deepseek,2026)
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("d/M/yyyy");
-    //#(deepseek,2026)
 
-    private InputValidator() {}
 
-    public static boolean isNotBlank(String input){
-        return input != null && !input.trim().isEmpty();
+    public int parseInteger(String input) {
+        int result;
+        try {
+            result = Integer.parseInt(input.trim());
+        } catch (NumberFormatException e) {
+            result = Integer.MIN_VALUE;
+        }
+        return result;
     }
 
-    public static boolean isValidZone(int zone) {
+    public boolean isValidZone(int zone) {
         return zone >= CityRideDataset.MIN_ZONE && zone <= CityRideDataset.MAX_ZONE;
     }
 
-    public static boolean isValidDate(String dateStr) {
-        // try-catch is used to handle runtime errors so the program does not crash
-        try {
-            LocalDate.parse(dateStr, DATE_FORMATTER);
-            return true;
-        } catch (DateTimeParseException e) {
-            return false;
-        }
-    }
 
-    public static LocalDate parseDate(String dateStr) {
-        try {
-            return LocalDate.parse(dateStr, DATE_FORMATTER);
-        } catch (DateTimeParseException e) {
-            return null;
-        }
-    }
-    //#(deepseek,2026)
-    public static boolean isValidInteger(String input) {
-        if (!isNotBlank(input)) {
-            return false;
-        }
-        try {
-            Integer.parseInt(input.trim()); // trim() removes any leading and trailing whitespace from the input
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-
-    // separates integers from strings
-
-    public  Integer parseInteger(String input) {
-        try {
-            return Integer.parseInt(input.trim());
-        } catch (NumberFormatException e) {
-            return null;
-        }
-    }
-/// change
-
-    public static boolean isValidTimeBand(String input) {
-        return parseTimeBand(input) != null;
-    }
-
-   public static CityRideDataset.TimeBand parseTimeBand(String input) {
-        if (input == null ){
-            return null;
-        }
-        String upperInput = input.trim().toUpperCase();
-        if (upperInput.equals("PEAK")){
-            return CityRideDataset.TimeBand.PEAK;
-        }
-        if (upperInput.equals("OFF_PEAK")){
-            return CityRideDataset.TimeBand.OFF_PEAK;
-        }
-
-        return null;
-
-    }
-
-    public static boolean isValidPassengerType(String input) {
-        return parsePassengerType(input) != null;
-    }
-
-    public static CityRideDataset.PassengerType parsePassengerType(String input) {
-        if (input == null) {
-            return null;
-        }
-        String upperInput = input.trim().toUpperCase();
-        switch (upperInput) {
+    public CityRideDataset.PassengerType parsePassengerType(String input) {
+        CityRideDataset.PassengerType result;
+        switch (input.trim().toUpperCase()) {
             case "ADULT":
-                return CityRideDataset.PassengerType.ADULT;
+                result = CityRideDataset.PassengerType.ADULT;
+                break;
             case "STUDENT":
-                return CityRideDataset.PassengerType.STUDENT;
+                result = CityRideDataset.PassengerType.STUDENT;
+                break;
             case "CHILD":
-                return CityRideDataset.PassengerType.CHILD;
+                result = CityRideDataset.PassengerType.CHILD;
+                break;
+            case "SENIOR":
             case "SENIOR_CITIZEN":
-                return CityRideDataset.PassengerType.SENIOR_CITIZEN;
-                default:
-                    return null;
-        }
-    }
-
-    public static boolean isValidPaymentOption(String input) {
-        return parsePaymentOption(input) != null;
-    }
-
-    public static PaymentOption parsePaymentOption(String input) {
-        if (input == null) {
-            return null;
-        }
-
-        String upperInput = input.trim().toUpperCase();
-        switch (upperInput) {
-            case "CONTACTLESS_CARD":
-                return PaymentOption.CONTACTLESS_CARD;
-            case "MOBILE_WALLET":
-                return PaymentOption.MOBILE_WALLET;
-            case "CASH":
-                return PaymentOption.CASH;
-            case "STUDENT_PASS":
-                return PaymentOption.STUDENT_PASS;
+                result = CityRideDataset.PassengerType.SENIOR_CITIZEN;
+                break;
             default:
-                return null;
+                result = null;
         }
+        return result;
     }
 
+
+    public CityRideDataset.TimeBand parseTimeBand(String input) {
+        CityRideDataset.TimeBand result;
+        String normalised = input.trim().toUpperCase()
+                .replace("-", "_").replace(" ", "_");
+        switch (normalised) {
+            case "PEAK":
+                result = CityRideDataset.TimeBand.PEAK;
+                break;
+            case "OFF_PEAK":
+                result = CityRideDataset.TimeBand.OFF_PEAK;
+                break;
+            default:
+                result = null;
+        }
+        return result;
+    }
+
+
+    public BigDecimal parseMoney(String input) {
+        BigDecimal result;
+        try {
+            result = new BigDecimal(input.trim());
+        } catch (NumberFormatException e) {
+            result = null;
+        }
+        return result;
+    }
+
+
+    public boolean isPositive(BigDecimal amount) {
+        return amount != null && amount.compareTo(BigDecimal.ZERO) > 0;
+    }
+
+
+    public boolean isValidDiscountRate(BigDecimal rate) {
+        boolean valid = rate != null
+                && rate.compareTo(BigDecimal.ZERO) >= 0
+                && rate.compareTo(BigDecimal.ONE) <= 0;
+        return valid;
+    }
+
+    public boolean isValidHour(int hour) {
+        return hour >= 0 && hour <= 23;
+    }
+
+    public boolean isNonBlank(String input) {
+        return input != null && !input.trim().isEmpty();
+    }
 
 }
