@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 2 v3.5">
-      <change beforePath="$PROJECT_DIR$/src/PaymentOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileFileHandler.java" afterDir="false" />
+    <list default="true" id="94ab4cd7-dab3-4e13-b1bd-56357ee0f7de" name="Changes" comment="Part 2 milestone 2 v3.6">
+      <change afterPath="$PROJECT_DIR$/src/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdminMenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdminMenuHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FareCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FareCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Journey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Journey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JourneyFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JourneyFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JourneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JourneyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReportExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReportExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RiderProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RiderProfile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782305217027</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Part 2 milestone 2 v3.6">
+      <option name="closed" value="true" />
+      <created>1782321875533</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1782321875533</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +389,7 @@
     <MESSAGE value="Part 2 milestone 2 v3.3" />
     <MESSAGE value="Part 2 milestone 2 v3.4" />
     <MESSAGE value="Part 2 milestone 2 v3.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 2 v3.5" />
+    <MESSAGE value="Part 2 milestone 2 v3.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 2 milestone 2 v3.6" />
   </component>
 </project>

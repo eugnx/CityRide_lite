@@ -24,7 +24,7 @@ public class ReportExporter {
 
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
                 // Header
-                writer.write("id,date,fromZone,toZone,timeBand,passengerType," +
+                writer.write("id,date,time,fromZone,toZone,timeBand,passengerType," +
                         "zonesCrossed,baseFare,discountApplied,chargedFare");
                 writer.newLine();
 
@@ -152,7 +152,7 @@ public class ReportExporter {
                     writer.newLine();
                     writer.write("ZONE USAGE:");
                     writer.newLine();
-                    Map<String, Integer> zoneUsage = journeyManager.getZoneUsage();
+                    Map<String, Integer> zoneUsage = journeyManager.getZonePairCounts();
                     for (Map.Entry<String, Integer> entry : zoneUsage.entrySet()) {
                         writer.write(String.format("  %-15s : %d time(s)%n",
                                 entry.getKey(), entry.getValue()));
@@ -179,10 +179,16 @@ public class ReportExporter {
         return REPORT_DIR + safeName + "_" + dateStr + "." + extension;
     }
 
+    private static final DateTimeFormatter TIME_FORMATTER =
+            DateTimeFormatter.ofPattern("HH:mm");
+
     private String journeyToCsvLine(Journey journey) {
+        String timeStr = (journey.getTime() != null)
+                ? journey.getTime().format(TIME_FORMATTER) : "";
         return String.join(",",
                 String.valueOf(journey.getJourneyId()),
                 journey.getDate().format(DATE_FORMATTER),
+                timeStr,
                 String.valueOf(journey.getFromZone()),
                 String.valueOf(journey.getToZone()),
                 journey.getTimeBand().name(),

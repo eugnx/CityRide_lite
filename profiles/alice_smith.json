@@ -1,0 +1,5 @@
+{
+  "name": "Alice Smith",
+  "passengerType": "ADULT",
+  "defaultPaymentOption": "CONTACTLESS"
+}

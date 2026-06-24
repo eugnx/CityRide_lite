@@ -1,0 +1,12 @@
+id,date,time,fromZone,toZone,timeBand,passengerType,zonesCrossed,baseFare,discountApplied,chargedFare
+1,26/06/2026,08:40,5,2,PEAK,ADULT,4,4.50,0.00,4.50
+
+--- SUMMARY ---
+Total journeys,1
+Total cost,£4.50
+Average cost per journey,£4.50
+Most expensive journey,ID 1,£4.50
+Cap reached (ADULT),NO
+Cap reached (STUDENT),NO
+Cap reached (CHILD),NO
+Cap reached (SENIOR_CITIZEN),NO

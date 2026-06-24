@@ -13,10 +13,10 @@ public final class FareCalculator {
     }
 
 
-    //Retrieves the base fare for a zone pair and time band from the dataset.
+    // Retrieves the base fare for a zone pair and time band from the live config.
 
     public static BigDecimal getBaseFare(int fromZone, int toZone, CityRideDataset.TimeBand timeBand) {
-        BigDecimal fare = CityRideDataset.getBaseFare(fromZone, toZone, timeBand);
+        BigDecimal fare = ConfigManager.getInstance().getBaseFare(fromZone, toZone, timeBand);
         return fare != null ? fare : BigDecimal.ZERO;
     }
 
@@ -29,7 +29,7 @@ public final class FareCalculator {
         return discountedFare.setScale(2, RoundingMode.HALF_UP);
     }
 
-    // Applies the daily cap, returning the portion of the discounted fare that
+    // Applies the daily cap, returning the portion of the discounted fare charged.
 
     public static BigDecimal applyDailyCap(BigDecimal discountedFare,
                                            BigDecimal currentTotal,
@@ -51,7 +51,7 @@ public final class FareCalculator {
 
 
     // Calculates the complete fare for a journey, setting all intermediate values
-    // (zones crossed, base fare, discount, charged fare) on the journey object.
+    // on the journey object.
 
     public static BigDecimal calculateFullFare(Journey journey, BigDecimal currentTotal) {
         int zonesCrossed = journey.calculateZonesCrossed();

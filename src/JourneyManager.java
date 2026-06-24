@@ -215,7 +215,18 @@ public class JourneyManager {
         return counts;
     }
 
-    // (DeepSeek, 2026) — zone usage aggregation pattern
+    // Returns a map of "Zone X → Zone Y" pair label → journey count.
+
+    public Map<String, Integer> getZonePairCounts() {
+        Map<String, Integer> counts = new HashMap<>();
+        for (Journey journey : journeys) {
+            String key = "Zone " + journey.getFromZone() + " \u2192 Zone " + journey.getToZone();
+            counts.put(key, counts.getOrDefault(key, 0) + 1);
+        }
+        return counts;
+    }
+
+    // Returns individual zone departure/arrival usage counts.
 
     public Map<String, Integer> getZoneUsage() {
         Map<String, Integer> zoneUsage = new HashMap<>();
