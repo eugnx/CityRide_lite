@@ -93,7 +93,7 @@ public class AdminMenuHandler {
         System.out.println("\n--- Base Fares ---");
         System.out.printf("%-22s %-12s %-12s%n", "Route (From→To)", "PEAK (£)", "OFF_PEAK (£)");
         System.out.println("-".repeat(48));
-
+//#(ChatGpt,2026)
         for (int from = CityRideDataset.MIN_ZONE; from <= CityRideDataset.MAX_ZONE; from++) {
             for (int to = CityRideDataset.MIN_ZONE; to <= CityRideDataset.MAX_ZONE; to++) {
                 BigDecimal peak    = config.getBaseFare(from, to, CityRideDataset.TimeBand.PEAK);

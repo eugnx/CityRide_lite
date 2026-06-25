@@ -45,7 +45,7 @@ public final class ConfigManager {
 
 
     // Loads config from file. Falls back to dataset defaults if file is missing.
-
+//#(Claude ai,2026)
     public void load() {
         Path path = Paths.get(CONFIG_PATH);
         if (Files.exists(path)) {
@@ -184,7 +184,7 @@ public final class ConfigManager {
 
 
     // --- JSON serialisation (hand-rolled to avoid dependencies) ---
-
+//#(Claude ai,2026)
     private String toJson() {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");

@@ -181,7 +181,7 @@ public class ReportExporter {
 
     private static final DateTimeFormatter TIME_FORMATTER =
             DateTimeFormatter.ofPattern("HH:mm");
-
+//#(Chatgpt,2026)
     private String journeyToCsvLine(Journey journey) {
         String timeStr = (journey.getTime() != null)
                 ? journey.getTime().format(TIME_FORMATTER) : "";

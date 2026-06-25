@@ -34,8 +34,6 @@ public class JourneyManager {
 
 
     // CRUD operations
-
-
     //Adds a journey to the day, calculates its fare (considering the daily cap),and updates all running totals.
 
     public Journey addJourney(Journey journey) {

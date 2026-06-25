@@ -1,3 +1,4 @@
+//#(gemini,2026)
 public enum PaymentOption {
 
     CONTACTLESS("Contactless Card"),
